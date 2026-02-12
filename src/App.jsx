@@ -3,13 +3,13 @@ import { Box, Paper, Tabs, Tab, Typography, Button } from "@mui/material";
 import IngredientsTab from "./components/IngredientsTab";
 import MenuTab from "./components/MenuTab";
 import AnalysisTab from "./components/AnalysisTab";
-import SimulationTab from "./components/SimulationTab";
+import PricingTab from "./components/PricingTab";
 
 const TABS = [
   { key: "ingredients", label: "🧂 재료 관리" },
   { key: "menu", label: "🍔 메뉴 & 원가" },
   { key: "analysis", label: "📊 손익분석" },
-  { key: "simulation", label: "🏷️ 시뮬레이션" },
+  { key: "pricing", label: "🏷️ 가격 추천" },
 ];
 
 const DEMO_INGREDIENTS_TEST = [
@@ -164,8 +164,8 @@ export default function App() {
             setFixedCost={setFixedCost}
           />
         )}
-        {tab === "simulation" && (
-          <SimulationTab
+        {tab === "pricing" && (
+          <PricingTab
             menus={menus}
             ingredients={ingredients}
             fixedCost={fixedCost}
