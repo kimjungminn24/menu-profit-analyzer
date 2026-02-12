@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Box, Paper, Tabs, Tab, Typography, Button } from "@mui/material";
-import IngredientsTab from "./components/IngredientsTab";
 import MenuTab from "./components/MenuTab";
 import AnalysisTab from "./components/AnalysisTab";
 import PricingTab from "./components/PricingTab";
+import IngredientsTab from "./components/ingredients/IngredientsTab";
 
 const TABS = [
   { key: "ingredients", label: "🧂 재료 관리" },
