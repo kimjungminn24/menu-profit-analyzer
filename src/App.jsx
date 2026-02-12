@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Paper, Tabs, Tab, Typography, Button } from "@mui/material";
 import MenuTab from "./components/MenuTab";
-import AnalysisTab from "./components/AnalysisTab";
+import AnalysisTab from "./components/analysis/AnalysisTab";
 import PricingTab from "./components/PricingTab";
 import IngredientsTab from "./components/ingredients/IngredientsTab";
 
