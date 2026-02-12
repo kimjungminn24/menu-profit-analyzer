@@ -1,0 +1,45 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Paperlogy-4Regular";
+  font-weight: normal;
+  src: url("./fonts/Paperlogy-4Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Paperlogy-6SemiBold";
+  font-weight: normal;
+  src: url("./fonts/Paperlogy-6SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Paperlogy-7Bold";
+  font-weight: normal;
+  src: url("./fonts/Paperlogy-7Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TossFace";
+  src: url("./fonts/TossFace.ttf") format("truetype");
+}
+
+body {
+  font-family: "Paperlogy-4Regular";
+}
+.emoji {
+  font-family: "TossFace";
+  margin-right: 0.5rem;
+}
+
+.bold {
+  font-family: "Paperlogy-6SemiBold";
+}
+.extra-bold {
+  font-family: "Paperlogy-7Bold";
+}
