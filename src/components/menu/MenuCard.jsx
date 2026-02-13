@@ -86,7 +86,7 @@ export default function MenuCard({
 
         {cost > menu.sellingPrice && (
           <Alert severity="error" sx={{ mt: 1 }}>
-            ⚠️ 원가({fmt(Math.round(cost))}원)가 판매가(
+            원가({fmt(Math.round(cost))}원)가 판매가(
             {fmt(menu.sellingPrice)}원)보다 높습니다! 팔수록 손해입니다.
           </Alert>
         )}

@@ -8,7 +8,7 @@ function StatCard({ label, value, unit, color }) {
       <Typography variant="h6" color={color}>
         {value}
       </Typography>
-      {unit && <Typography variant="body2">{unit}</Typography>}
+      <Typography variant="body2">{unit || "\u00A0"}</Typography>
     </Paper>
   );
 }

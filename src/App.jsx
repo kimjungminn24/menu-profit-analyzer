@@ -34,10 +34,10 @@ export default function App() {
     <Box sx={{ minHeight: "100vh", p: 4, maxWidth: 960, mx: "auto" }}>
       <Box mb={3}>
         <Typography variant="h4" fontWeight={800} gutterBottom>
-          <span className="emoji">💰</span>원가 & 가성비 계산기
+          <span className="emoji">💰</span>마진계산기
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          소규모 자영업자를 위한 메뉴별 원가 분석, 손익분기점, 가성비 비교 도구
+          팔수록 남는 메뉴 만들기 — 원가 분석부터 가격 설정까지
         </Typography>
       </Box>
 
@@ -95,7 +95,7 @@ export default function App() {
       </Paper>
 
       <Box textAlign="center" mt={4} fontSize={12} color="text.secondary">
-        원가 & 가성비 계산기 · 소규모 자영업자를 위한 도구
+        팔수록 남는 메뉴 만들기 — 원가 분석부터 가격 설정까지
       </Box>
     </Box>
   );

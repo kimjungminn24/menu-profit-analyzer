@@ -71,7 +71,7 @@ export default function BepTable({ menuData, fixedCost, bep }) {
       {bep !== null && (
         <Box mt={2}>
           <Alert severity="info">
-            월 고정비 {fmt(fc)}원을 충당하기 위해서는{" "}
+            월 고정비 {fmt(fc)}원을 충당하기 위해서는
             <strong>{fmt(bep)}개</strong>를 판매해야 합니다.
           </Alert>
         </Box>
