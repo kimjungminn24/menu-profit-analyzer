@@ -1,16 +1,113 @@
-# React + Vite
+# 원가 & 손익분기점 계산기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+소규모 외식업 자영업자가 메뉴 1개당 정확한 원가를 계산하고, 손익분기점 및 적정 판매가를 산출할 수 있도록 설계한 React 기반 웹 애플리케이션입니다.
 
-Currently, two official plugins are available:
+엑셀 기반 수기 계산과 감에 의존한 가격 책정 문제를 해결하는 것을 목표로 합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# 해결한 문제
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 재료 단위가 서로 달라 정확한 원가 계산이 어려움 (kg / g / ml / L / 개)
+- 메뉴별 실제 마진율 파악 불가
+- 월 고정비를 고려한 손익분기 판매량 산출 불가
+- 목표 이익률 기반 적정 판매가 역산 기능 부재
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 핵심 기능
+
+## 1. 재료 관리
+
+- 재료 등록 (이름, 구매 수량, 구매 단위, 가격)
+- 무게 / 부피 / 개수 단위 독립 변환 체계 구현
+- 기본 단위(g, ml, 개) 기준 단위당 단가 자동 계산
+
+단위 변환 구조
+
+```
+TO_BASE = { g:1, kg:1000, ml:1, L:1000, 개:1 }
+단위당 단가 = 구매가 ÷ (구매수량 × TO_BASE[단위])
+```
+
+---
+
+## 2. 메뉴 & 레시피 원가 계산
+
+- 메뉴 등록 (이름, 판매가, 월 예상 판매량)
+- 레시피 구성 (재료 + 사용량 입력)
+- 메뉴 1개당 원가, 개당 이익, 마진율 계산
+- 월 매출 및 월 이익 자동 계산
+- 원가 > 판매가 발생 시 경고 표시
+
+원가 계산 공식
+
+```
+메뉴 원가 = Σ (단위당 단가 × 사용량)
+마진율 = (판매가 - 원가) ÷ 판매가
+```
+
+---
+
+## 3. 손익분석
+
+- 월 고정비 입력
+- 메뉴별 손익분기 판매량 계산 (월 / 일 기준)
+- 이익률 구간별 시각화
+
+손익분기 공식
+
+```
+손익분기 판매량 = 월 고정비 ÷ 개당 이익
+일 판매 목표 = 월 판매량 ÷ 30
+```
+
+---
+
+## 4. 가격 추천
+
+- 목표 이익률 설정 (10~90%)
+- 적정 판매가 자동 역산
+- 현재 판매가 대비 차이 금액 표시
+- 30% / 50% / 70% 구간별 비교 제공
+
+역산 공식
+
+```
+추천 판매가 = 원가 ÷ (1 - 목표이익률)
+```
+
+---
+
+# 예외 처리
+
+- 원가 > 판매가 시 경고 표시
+- 재료 미등록 상태에서 메뉴 접근 시 안내 메시지 표시
+- 레시피 없는 메뉴는 원가 0원 처리 후 안내 출력
+- 0 이하 값 입력 시 validation 처리
+- 내부 계산은 소수점 유지, 표시 시 원 단위 반올림
+
+---
+
+# 기술 스택
+
+- React
+- Vite
+- MUI (Material UI)
+- MUI X DataGrid
+
+---
+
+# 실행 방법
+
+[서비스 바로가기](https://menu-profit.vercel.app/)
+
+```bash
+
+git clone https://github.com/kimjungminn24/menu-profit-analyzer
+cd menu-profit-analyzer
+npm install
+npm run dev
+npm run build //프로덕션 빌드
+
+```
