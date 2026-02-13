@@ -1,0 +1,172 @@
+// 테스트용 재료 데이터
+export const DEMO_INGREDIENTS = [
+  // 베이커리 기본 재료
+  {
+    id: "ing1",
+    name: "카다이프",
+    unit: "g",
+    purchaseQty: 1000,
+    purchasePrice: 15000,
+  },
+  {
+    id: "ing2",
+    name: "피스타치오 페이스트",
+    unit: "g",
+    purchaseQty: 500,
+    purchasePrice: 25000,
+  },
+  {
+    id: "ing3",
+    name: "화이트 커버춰 초콜릿",
+    unit: "g",
+    purchaseQty: 500,
+    purchasePrice: 24000,
+  },
+  {
+    id: "ing4",
+    name: "버터 (무염)",
+    unit: "g",
+    purchaseQty: 454,
+    purchasePrice: 7000,
+  },
+  {
+    id: "ing5",
+    name: "마시멜로",
+    unit: "g",
+    purchaseQty: 1000,
+    purchasePrice: 12000,
+  },
+  {
+    id: "ing6",
+    name: "코코아 파우더",
+    unit: "g",
+    purchaseQty: 500,
+    purchasePrice: 14000,
+  },
+  {
+    id: "ing7",
+    name: "탈지분유",
+    unit: "g",
+    purchaseQty: 500,
+    purchasePrice: 10000,
+  },
+  {
+    id: "ing8",
+    name: "식용유 (작업용)",
+    unit: "ml",
+    purchaseQty: 1000,
+    purchasePrice: 8000,
+  },
+  // 마들렌·쿠키 재료
+  {
+    id: "ing9",
+    name: "박력분",
+    unit: "kg",
+    purchaseQty: 1,
+    purchasePrice: 3500,
+  },
+  {
+    id: "ing10",
+    name: "설탕",
+    unit: "kg",
+    purchaseQty: 1,
+    purchasePrice: 2800,
+  },
+  {
+    id: "ing11",
+    name: "달걀",
+    unit: "개",
+    purchaseQty: 30,
+    purchasePrice: 7500,
+  },
+  {
+    id: "ing12",
+    name: "베이킹파우더",
+    unit: "g",
+    purchaseQty: 100,
+    purchasePrice: 2000,
+  },
+  {
+    id: "ing13",
+    name: "바닐라 익스트랙",
+    unit: "ml",
+    purchaseQty: 100,
+    purchasePrice: 8500,
+  },
+  // 음료 재료
+  {
+    id: "ing14",
+    name: "원두 (스페셜티)",
+    unit: "kg",
+    purchaseQty: 1,
+    purchasePrice: 32000,
+  },
+  {
+    id: "ing15",
+    name: "우유",
+    unit: "L",
+    purchaseQty: 1,
+    purchasePrice: 2800,
+  },
+  {
+    id: "ing16",
+    name: "말차 파우더",
+    unit: "g",
+    purchaseQty: 100,
+    purchasePrice: 15000,
+  },
+];
+
+// 테스트용 메뉴 데이터
+export const DEMO_MENUS = [
+  {
+    id: "menu1",
+    name: "두바이 쫀득 쿠키",
+    sellingPrice: 50000,
+    monthlySales: 10,
+    recipe: [
+      { id: "r1", ingredientId: "ing1", amount: 140 },
+      { id: "r2", ingredientId: "ing2", amount: 145 },
+      { id: "r3", ingredientId: "ing3", amount: 55 },
+      { id: "r4", ingredientId: "ing4", amount: 45 },
+      { id: "r5", ingredientId: "ing5", amount: 175 },
+      { id: "r6", ingredientId: "ing4", amount: 25 },
+      { id: "r7", ingredientId: "ing6", amount: 15 },
+      { id: "r8", ingredientId: "ing7", amount: 15 },
+      { id: "r9", ingredientId: "ing8", amount: 5 },
+    ],
+  },
+  {
+    id: "menu2",
+    name: "피스타치오 마들렌 (6개)",
+    sellingPrice: 12000,
+    monthlySales: 80,
+    recipe: [
+      { id: "r10", ingredientId: "ing9", amount: 120 },
+      { id: "r11", ingredientId: "ing10", amount: 100 },
+      { id: "r12", ingredientId: "ing4", amount: 120 },
+      { id: "r13", ingredientId: "ing11", amount: 3 },
+      { id: "r14", ingredientId: "ing12", amount: 3 },
+      { id: "r15", ingredientId: "ing2", amount: 30 },
+      { id: "r16", ingredientId: "ing13", amount: 3 },
+    ],
+  },
+  {
+    id: "menu3",
+    name: "말차 라떼",
+    sellingPrice: 5500,
+    monthlySales: 200,
+    recipe: [
+      { id: "r17", ingredientId: "ing16", amount: 3 },
+      { id: "r18", ingredientId: "ing15", amount: 200 },
+      { id: "r19", ingredientId: "ing10", amount: 10 },
+    ],
+  },
+  {
+    id: "menu4",
+    name: "아메리카노",
+    sellingPrice: 4000,
+    monthlySales: 300,
+    recipe: [{ id: "r20", ingredientId: "ing14", amount: 18 }],
+  },
+];
